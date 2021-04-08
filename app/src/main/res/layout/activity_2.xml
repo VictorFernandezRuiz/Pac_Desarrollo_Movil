@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,7 +14,6 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="0.3"
         android:text="CrearTabla"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="275dp" />
 
@@ -25,7 +24,6 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="0.3"
         android:text="InsertarDatos"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="341dp" />
 
@@ -36,7 +34,6 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="0.3"
         android:text="ConsultarDatos"
-        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="420dp" />
 
@@ -52,4 +49,4 @@
         tools:layout_editor_absoluteY="608dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
