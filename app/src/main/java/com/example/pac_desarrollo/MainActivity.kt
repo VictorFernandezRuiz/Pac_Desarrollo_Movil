@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonPause: Button
     private lateinit var buttonStop: Button
     private lateinit var buttonActivity2: Button
+    private lateinit var buttonActivity3: Button
 
     private lateinit var mediaPlayer: MediaPlayer
 
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         buttonPause = findViewById(R.id.buttonPause)
         buttonStop = findViewById(R.id.buttonStop)
         buttonActivity2 = findViewById(R.id.buttonActivity2)
-
+        buttonActivity3 = findViewById(R.id.buttonActivity3)
         mediaPlayer = MediaPlayer.create(this, R.raw.milan)
 
         setOnClickListeners(this)
@@ -56,6 +57,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(goToActivity2)
             Toast.makeText(this, "Nos encontramos en la Activity 2",  Toast.LENGTH_SHORT).show()
 
+        }
+        buttonActivity3.setOnClickListener {
+            val intento1 = Intent(this, Activity3::class.java)
+            startActivity(intento1)
         }
     }
     
