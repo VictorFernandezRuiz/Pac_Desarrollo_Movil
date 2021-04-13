@@ -5,23 +5,13 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class MyOpenHelper(context: Context?) : SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
+class MyOpenHelper(context: Context, name: String, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
+
     override fun onCreate(db: SQLiteDatabase) {
-        db.execSQL(COMMENTS_TABLE_CREATE)
+        db.execSQL("create table articulos(codigo int primary key, descripcion text, precio real)")
     }
 
-    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
 
-    companion object {
-        private const val COMMENTS_TABLE_CREATE = "CREATE TABLE comments(_id INTEGER PRIMARY KEY AUTOINCREMENT, user TEXT, comment TEXT)"
-        private const val DB_NAME = "comments.sqlite"
-        private const val DB_VERSION = 1
     }
-
-    fun getLetra(): Cursor {
-        val db: SQLiteDatabase = this.getWritableDatabase()
-        val sql = "select Letra from Canciones"
-        return db.rawQuery(sql, null)
-    }
-
 }

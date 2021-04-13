@@ -3,6 +3,7 @@ package com.example.pac_desarrollo
 import android.content.Context
 import android.content.Intent
 import android.media.MediaPlayer
+
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -30,22 +31,19 @@ class MainActivity : AppCompatActivity() {
 
         mediaPlayer = MediaPlayer.create(this, R.raw.milan)
 
-
-
         setOnClickListeners(this)
-
 
     }
 
     private fun setOnClickListeners(context: Context) {
         buttonPlay.setOnClickListener {
             mediaPlayer.start()
-            Toast.makeText(context, "Reproduciendo...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Se reproduce la canción 'Milan'...", Toast.LENGTH_SHORT).show()
         }
 
         buttonPause.setOnClickListener {
             mediaPlayer.pause()
-            Toast.makeText(context, "En pausa...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Canción pausada", Toast.LENGTH_SHORT).show()
         }
 
         buttonStop.setOnClickListener {
@@ -54,11 +52,13 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(context, "Parando...", Toast.LENGTH_SHORT).show()
         }
         buttonActivity2.setOnClickListener{
-            val intento1 = Intent(this, Activity2::class.java)
-            startActivity(intento1)
+            val goToActivity2 = Intent(this, Activity2::class.java)
+            startActivity(goToActivity2)
+            Toast.makeText(this, "Nos encontramos en la Activity 2",  Toast.LENGTH_SHORT).show()
 
         }
     }
+    
 
 
 }
