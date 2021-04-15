@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".Activity2" />
         <activity android:name=".Activity3" />
+        <activity android:name=".Activity4" />
 
         <!-- PARA USAR LA CAMARA EN ANDROID 7 O SUPERIOR -->
         <provider
