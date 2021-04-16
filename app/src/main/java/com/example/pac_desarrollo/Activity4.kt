@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 
 class Activity4 : AppCompatActivity() {
 
+    // VICTOR FERNANDEZ RUIZ para Ilerna
+
     private lateinit var buttonActivity1: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {

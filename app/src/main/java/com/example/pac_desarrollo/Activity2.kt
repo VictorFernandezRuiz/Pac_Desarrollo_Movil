@@ -15,6 +15,8 @@ import java.sql.SQLException
 
 class Activity2 : AppCompatActivity() {
 
+    // VICTOR FERNANDEZ RUIZ para Ilerna
+
 
     private lateinit var buttonInsertarDatos: Button
     private lateinit var buttonConsultarDatos: Button

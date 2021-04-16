@@ -21,6 +21,10 @@ import androidx.core.content.FileProvider
 import java.io.File
 
 class Activity3 : AppCompatActivity() {
+
+    // VICTOR FERNANDEZ RUIZ para Ilerna
+
+
     var ivFoto: ImageView? = null
     var btnTomarFoto: Button? = null
     var btnvolver: Button? = null

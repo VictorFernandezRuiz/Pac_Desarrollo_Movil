@@ -13,8 +13,10 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+
+    // VICTOR FERNANDEZ RUIZ para Ilerna
+
     private lateinit var buttonPlay: Button
-    private lateinit var buttonPause: Button
     private lateinit var buttonStop: Button
     private lateinit var buttonActivity2: Button
     private lateinit var buttonActivity3: Button
@@ -27,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonPlay = findViewById(R.id.buttonPlay)
-        buttonPause = findViewById(R.id.buttonPause)
         buttonStop = findViewById(R.id.buttonStop)
         buttonActivity2 = findViewById(R.id.buttonActivity2)
         buttonActivity3 = findViewById(R.id.buttonActivity3)
@@ -41,18 +42,14 @@ class MainActivity : AppCompatActivity() {
     private fun setOnClickListeners(context: Context) {
         buttonPlay.setOnClickListener {
             mediaPlayer.start()
-            Toast.makeText(context, "Se reproduce la canción 'Milan'...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Se reproduce la canción 'Milan'", Toast.LENGTH_SHORT).show()
         }
 
-        buttonPause.setOnClickListener {
-            mediaPlayer.pause()
-            Toast.makeText(context, "Canción pausada", Toast.LENGTH_SHORT).show()
-        }
 
         buttonStop.setOnClickListener {
             mediaPlayer.stop()
             mediaPlayer = MediaPlayer.create(context, R.raw.milan)
-            Toast.makeText(context, "Parando...", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Se detiene la canción", Toast.LENGTH_SHORT).show()
         }
         buttonActivity2.setOnClickListener{
             val goToActivity2 = Intent(this, Activity2::class.java)

@@ -7,7 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper
 
 class MyOpenHelper(context: Context, name: String, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, name, factory, version) {
 
+    // VICTOR FERNANDEZ RUIZ para Ilerna
+
     override fun onCreate(db: SQLiteDatabase) {
+
+
         db.execSQL("create table articulos(codigo int primary key, descripcion text, precio real)")
     }
 
