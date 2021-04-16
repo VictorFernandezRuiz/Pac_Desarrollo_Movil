@@ -52,6 +52,7 @@ class Activity2 : AppCompatActivity() {
         buttonConsultarDatos.setOnClickListener {
             val admin = MyOpenHelper(this, "administracion", null, 1)
             val bd = admin.writableDatabase
+
             val fila = bd.rawQuery("select descripcion,precio from articulos where codigo=${editCodProd.text.toString()}", null)
             if (fila.moveToFirst()) {
                 editNombre.setText(fila.getString(0))
