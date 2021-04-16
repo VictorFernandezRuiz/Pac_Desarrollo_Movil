@@ -2,11 +2,15 @@ package com.example.pac_desarrollo
 
 import android.content.ContentValues
 import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteException
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.sql.SQLDataException
+import java.sql.SQLException
 
 
 class Activity2 : AppCompatActivity() {
@@ -19,6 +23,7 @@ class Activity2 : AppCompatActivity() {
     private lateinit var editCodProd: EditText
     private lateinit var editNombre: EditText
     private lateinit var editPrecio: EditText
+    private lateinit var fila: Cursor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,13 +58,26 @@ class Activity2 : AppCompatActivity() {
             val admin = MyOpenHelper(this, "administracion", null, 1)
             val bd = admin.writableDatabase
 
-            val fila = bd.rawQuery("select descripcion,precio from articulos where codigo=${editCodProd.text.toString()}", null)
-            if (fila.moveToFirst()) {
-                editNombre.setText(fila.getString(0))
-                editPrecio.setText(fila.getString(1))
-            } else
-                Toast.makeText(this, "No existe un artículo con dicho código", Toast.LENGTH_SHORT).show()
-            bd.close()
+try{
+            fila = bd.rawQuery("select descripcion,precio from articulos where codigo=${editCodProd.text.toString()}", null)
+    if (fila.moveToFirst()) {
+        editNombre.setText(fila.getString(0))
+        editPrecio.setText(fila.getString(1))
+    } else {
+        Toast.makeText(this, "No existe un artículo con dicho código", Toast.LENGTH_SHORT).show()
+    }
+
+
+
+
+        } catch (e: SQLiteException){
+            Toast.makeText(this, "Error Base Datos", Toast.LENGTH_SHORT).show()
+
+        }
+            finally {
+                bd.close()
+            }
+
         }
 
 
